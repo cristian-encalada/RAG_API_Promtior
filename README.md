@@ -1,4 +1,4 @@
-# RAG_chatbot_Langchain
+# AWS Python LangServe Example
 
 ## Installation
 
@@ -47,6 +47,16 @@ export LANGCHAIN_PROJECT=<your-project>  # if not specified, defaults to "defaul
 ```bash
 langchain serve
 ```
+
+## Deploying to AWS
+
+Run the following command to deploy your LangServe app to AWS:
+
+```bash
+pulumi up
+```
+
+This will output the URL of your LangServe app. You can use this URL to make requests to your app.
 
 ## Running in Docker
 
