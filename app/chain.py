@@ -3,11 +3,9 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_openai import ChatOpenAI
 from langchain_community.retrievers import TavilySearchAPIRetriever
+from dotenv import load_dotenv
 
-import os
-
-os.environ['OPENAI_API_KEY'] = 'YOUR_API'
-os.environ['TAVILY_API_KEY'] = 'YOUR_API'
+load_dotenv()  # take environment variables from .env.
 
 retriever = TavilySearchAPIRetriever(k=3)
 
