@@ -1,0 +1,9 @@
+langchain
+langchain_community
+langchain-openai
+langchain-chroma
+beautifulsoup4
+langsmith
+python-dotenv
+fastapi[standard]
+uvicorn[standard]
