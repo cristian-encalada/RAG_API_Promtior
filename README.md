@@ -109,3 +109,8 @@ For more details about the implementation take a look at [/doc](./doc/) director
 ## Author
 
 Cristian Encalada - [Linkedin](https://www.linkedin.com/in/cristian-encalada/)
+
+## Acknowledgements
+
+* https://python.langchain.com/v0.2/docs/tutorials/rag/
+* https://vercel.com/templates/next.js/nextjs-ai-chatbot
