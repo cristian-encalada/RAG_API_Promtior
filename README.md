@@ -9,7 +9,7 @@ The chatbot is going to answer questions about **Promtior.ai** company:
 
 ### Backend
 
-API Endpoints URL: [Live API URL](https://rag-web-langchain-backend-bzdbhxcucfaue8hw.eastus-01.azurewebsites.net/)
+API Endpoints URL: [Live API URL](https://rag-api-promtior-bjepewbwhef2crgz.eastus-01.azurewebsites.net/)
 
 ```sh
 {
@@ -19,10 +19,18 @@ API Endpoints URL: [Live API URL](https://rag-web-langchain-backend-bzdbhxcucfau
 
 ![API endpoints](./doc/api_ask_promtior.png)
 
+
 **Langsmith traces:** 
 
-* [Langsmith traces](https://smith.langchain.com/o/dd33ff18-8dac-5e93-b016-c3a25d6545b0/projects/p/eeff82df-94c5-426b-a743-4c7e9493f5ed?timeModel=%7B%22duration%22%3A%227d%22%7D&peek=6b4d3ff4-4877-47bb-861e-bdbe97d01d5f)
+* [Langsmith traces](https://smith.langchain.com/public/1e9b8603-bafb-456f-b812-7f1e461f170c/r)
 
+**Docker hub image**
+
+* [Docker hub image](https://hub.docker.com/r/cristianencalada/rag-api-promtior)
+
+```
+docker pull cristianencalada/rag-api-promtior
+```
 
 ## Requirements
 
