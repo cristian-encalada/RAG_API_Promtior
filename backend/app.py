@@ -15,26 +15,24 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-# Initialize FastAPI app
+openai_api_key = os.getenv("OPENAI_API_KEY")
+langsmith_api_key = os.getenv("LANGSMITH_API_KEY")
+LANGCHAIN_TRACING_V2 = os.getenv("LANGCHAIN_TRACING_V2")
+
 app = FastAPI()
 
 @app.get("/")
 async def root():
     return RedirectResponse("/docs")
 
-# Load environment variables
-openai_api_key = os.getenv("OPENAI_API_KEY")
-langsmith_api_key = os.getenv("LANGSMITH_API_KEY")
-LANGCHAIN_ENDPOINT = os.getenv("LANGCHAIN_ENDPOINT")
-LANGCHAIN_TRACING_V2 = os.getenv("LANGCHAIN_TRACING_V2")
 
 # Initialize LangChain components
 llm = ChatOpenAI(model="gpt-4o")
 client = Client()
 
-# Load, chunk and index the contents of the blog.
+# Load, chunk and index the contents of Promtior's website.
 loader = WebBaseLoader(
-    web_paths=("https://cristianencalada.dev/",),
+    web_paths=("https://www.promtior.ai/",),
     bs_kwargs=dict(),
 )
 docs = loader.load()
@@ -43,11 +41,11 @@ text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=20
 splits = text_splitter.split_documents(docs)
 vectorstore = Chroma.from_documents(documents=splits, embedding=OpenAIEmbeddings())
 
-# Define request model
+# Request model
 class QueryRequest(BaseModel):
     question: str
 
-# Define FastAPI endpoint
+# FastAPI endpoint
 @app.post("/ask")
 async def ask_question(request: QueryRequest):
     try:
